@@ -38,12 +38,14 @@ def boolean_disjoint(feature_1: Any, feature_2: Any) -> bool:
             is_disjoint = disjoint(flat_1, flat_2)
 
             if not is_disjoint:
-                break
+                return is_disjoint
 
     return is_disjoint
 
 
-def disjoint(feature_1: List[Union[str, Sequence]], feature_2: List[Union[str, Sequence]]) -> bool:
+def disjoint(
+    feature_1: List[Union[str, Sequence]], feature_2: List[Union[str, Sequence]]
+) -> bool:
     """
     Returns true if the intersection of the two geometries is an empty set.
 
